@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flyer FionaAfroHairCare</title>
+    <style>
+        @page {
+            size: A5;
+            margin: 0;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            width: 148mm;
+            height: 210mm;
+            background: white;
+            margin: 0;
+            padding: 0;
+        }
+
+        .flyer {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .flyer-header {
+            background: linear-gradient(135deg, #8b6f47 0%, #6b5639 100%);
+            color: white;
+            padding: 20mm 15mm 25mm;
+            text-align: center;
+            position: relative;
+        }
+
+        .flyer-header::after {
+            content: '';
+            position: absolute;
+            bottom: -15mm;
+            left: 0;
+            right: 0;
+            height: 30mm;
+            background: white;
+            border-radius: 50% 50% 0 0;
+        }
+
+        .flyer-logo {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 12px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .flyer-logo svg {
+            width: 100%;
+            height: 100%;
+            filter: brightness(0) invert(1);
+        }
+
+        .flyer-title {
+            font-size: 24px;
+            font-weight: 300;
+            letter-spacing: 1.5px;
+            margin-bottom: 8px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .flyer-subtitle {
+            font-size: 13px;
+            opacity: 0.95;
+            font-style: italic;
+            position: relative;
+            z-index: 2;
+        }
+
+        .flyer-body {
+            padding: 5mm 12mm 12mm;
+            flex: 1;
+        }
+
+        .section {
+            margin-bottom: 15px;
+        }
+
+        .section h3 {
+            color: #8b6f47;
+            font-size: 14px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .benefit-list {
+            list-style: none;
+            font-size: 11px;
+            color: #555;
+            line-height: 1.7;
+        }
+
+        .benefit-list li {
+            padding-left: 18px;
+            position: relative;
+            margin-bottom: 6px;
+        }
+
+        .benefit-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #d4af37;
+            font-weight: bold;
+        }
+
+        .price-box {
+            background: #f5f1ea;
+            padding: 12px;
+            border-radius: 8px;
+            text-align: center;
+            border-left: 3px solid #d4af37;
+            margin: 12px 0;
+        }
+
+        .price-box strong {
+            color: #8b6f47;
+            font-size: 15px;
+        }
+
+        .price-box div {
+            font-size: 10px;
+            margin-top: 4px;
+            color: #666;
+        }
+
+        .decorative {
+            text-align: center;
+            color: #d4af37;
+            font-size: 10px;
+            margin: 10px 0;
+        }
+
+        .flyer-footer {
+            background: #faf8f5;
+            padding: 12mm 10mm;
+            text-align: center;
+            border-top: 2px solid #f0ebe3;
+        }
+
+        .qr-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 12px;
+        }
+
+        .qr-large {
+            width: 90px;
+            height: 90px;
+            background: white;
+            border: 3px solid #8b6f47;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 9px;
+            color: #6b5639;
+            text-align: center;
+            padding: 8px;
+            font-weight: bold;
+        }
+
+        .scan-text {
+            text-align: left;
+            max-width: 150px;
+        }
+
+        .scan-text h4 {
+            color: #8b6f47;
+            margin-bottom: 4px;
+            font-size: 13px;
+        }
+
+        .scan-text p {
+            font-size: 10px;
+            color: #666;
+            line-height: 1.5;
+        }
+
+        .contact-footer {
+            font-size: 10px;
+            color: #666;
+            margin-top: 10px;
+        }
+
+        .contact-footer strong {
+            color: #8b6f47;
+        }
+
+        @media print {
+            body {
+                margin: 0;
+                padding: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="flyer">
+        <div class="flyer-header">
+            <div class="flyer-logo">
+                <div class="logo" style="display: flex; align-items: center; gap: 0.5rem;">
+    <svg class="logo-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="60px" height="60px">
+  <defs>
+    <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#d4af37;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#b8941f;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Cercle extérieur doré -->
+  <circle cx="200" cy="200" r="180" fill="none" stroke="url(#goldGradient)" stroke-width="3"/>
+  
+  <!-- Photo au centre -->
+  <defs>
+    <clipPath id="photoCircle">
+      <circle cx="200" cy="200" r="175"/>
+    </clipPath>
+    <linearGradient id="darkOverlay" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#000000;stop-opacity:0" />
+      <stop offset="70%" style="stop-color:#000000;stop-opacity:0.3" />
+      <stop offset="100%" style="stop-color:#000000;stop-opacity:0.7" />
+    </linearGradient>
+  </defs>
+  
+  <image 
+    href="images/fiona-logo-photo.jpg"
+    x="25" 
+    y="25" 
+    width="350" 
+    height="350"
+    clip-path="url(#photoCircle)"
+    preserveAspectRatio="xMidYMid slice"
+  />
+  
+  <!-- Film noir pour améliorer la lisibilité du texte -->
+  <circle cx="200" cy="200" r="175" fill="url(#darkOverlay)" clip-path="url(#photoCircle)"/>
+  
+  <!-- Feuilles naturelles décoratives -->
+  <g transform="translate(200, 320)">
+    <ellipse cx="-40" cy="0" rx="8" ry="20" fill="#7a9b6f" opacity="0.5" transform="rotate(-20 -40 0)"/>
+    <ellipse cx="40" cy="0" rx="8" ry="20" fill="#7a9b6f" opacity="0.5" transform="rotate(20 40 0)"/>
+  </g>
+  
+  <!-- Texte FionaAfroHairCare -->
+  <text x="200" y="360" font-family="Georgia, serif" font-size="26" fill="#6b5639" text-anchor="middle" font-weight="300" letter-spacing="2">
+    FionaAfroHairCare
+  </text>
+  
+  <!-- Sous-titre -->
+  <text x="200" y="380" font-family="Georgia, serif" font-size="12" fill="#8b6f47" text-anchor="middle" font-style="italic">
+    Beauté Naturelle • Cheveux Crépus
+  </text>
+        </svg>
+</div>
+            </div>
+            <div class="flyer-title">FionaAfroHairCare</div>
+            <div class="flyer-subtitle">Révélez la Beauté de Vos Cheveux Crépus</div>
+        </div>
+
+        <div class="flyer-body">
+            <div class="section">
+                <h3>✨ Pourquoi Moi ?</h3>
+                <ul class="benefit-list">
+                    <li>Expertise complète cheveux 4C</li>
+                    <li>Formation prepoo, démêlage, méthodes LOC/LCO</li>
+                    <li>Produits artisanaux naturels sur mesure</li>
+                    <li>Techniques anti-casse et stimulation pousse</li>
+                    <li>Suivi personnalisé WhatsApp</li>
+                </ul>
+            </div>
+
+            <div class="price-box">
+                <strong>Consultations dès 5 000 FCFA</strong>
+                <div>Packs adaptés à tous les budgets</div>
+            </div>
+
+            <div class="decorative">✦ ✦ ✦</div>
+
+            <div class="section">
+                <h3>🎯 Ce Que Vous Allez Maîtriser</h3>
+                <ul class="benefit-list">
+                    <li>Routine complète de A à Z</li>
+                    <li>Lavage sans emmêlement ni casse</li>
+                    <li>Hydratation longue durée</li>
+                    <li>Coiffage quotidien sans shrinkage</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="flyer-footer">
+            <div class="qr-section">
+                <div class="qr-large">
+                    VOTRE<br>QR CODE<br>ICI
+                </div>
+                <div class="scan-text">
+                    <h4>📱 Scannez-moi !</h4>
+                    <p>Accédez à tous mes services, produits et tarifs en un clic</p>
+                </div>
+            </div>
+
+            <div class="contact-footer">
+                <div><strong>📍</strong> Douala, Cameroun</div>
+                <div><strong>📱</strong> WhatsApp: +237 692 455 585</div>
+                <div style="margin-top: 6px; font-size: 9px; font-style: italic;">
+                    Produits naturels • Consultations personnalisées
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

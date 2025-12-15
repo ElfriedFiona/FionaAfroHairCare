@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carte de Visite FionaAfroHairCare</title>
+    <style>
+        @page {
+            size: 85mm 55mm;
+            margin: 0;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            width: 85mm;
+            height: 55mm;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: white;
+        }
+
+        .business-card {
+            width: 85mm;
+            height: 55mm;
+            background: linear-gradient(135deg, #8b6f47 0%, #6b5639 100%);
+            padding: 12mm;
+            position: relative;
+            overflow: hidden;
+            color: white;
+        }
+
+        .business-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(212,175,55,0.1) 0%, transparent 70%);
+        }
+
+        .card-content {
+            position: relative;
+            z-index: 1;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .logo-area svg {
+            width: 40px;
+            height: 40px;
+        }
+
+        .qr-box {
+            width: 60px;
+            height: 60px;
+            background: white;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 7px;
+            color: #6b5639;
+            text-align: center;
+            padding: 4px;
+            font-weight: bold;
+        }
+
+        .brand-section {
+            margin-top: 8px;
+        }
+
+        .brand-name {
+            font-size: 16px;
+            font-weight: 300;
+            letter-spacing: 0.5px;
+            margin-bottom: 2px;
+        }
+
+        .tagline {
+            font-size: 8px;
+            opacity: 0.9;
+            font-style: italic;
+        }
+
+        .contact-info {
+            font-size: 9px;
+            line-height: 1.6;
+        }
+
+        .contact-info div {
+            margin-bottom: 3px;
+        }
+
+        @media print {
+            body {
+                margin: 0;
+                padding: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="business-card">
+        <div class="card-content">
+            <div class="card-header">
+                <div class="logo-area">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+                        <g transform="translate(200, 200) scale(0.7)">
+                            <circle cx="0" cy="-60" r="25" fill="white"/>
+                            <circle cx="-35" cy="-50" r="28" fill="white"/>
+                            <circle cx="35" cy="-50" r="28" fill="white"/>
+                            <circle cx="-55" cy="-25" r="30" fill="white"/>
+                            <circle cx="55" cy="-25" r="30" fill="white"/>
+                            <circle cx="-60" cy="5" r="28" fill="white"/>
+                            <circle cx="60" cy="5" r="28" fill="white"/>
+                            <circle cx="-45" cy="30" r="25" fill="white"/>
+                            <circle cx="45" cy="30" r="25" fill="white"/>
+                            <circle cx="-20" cy="45" r="22" fill="white"/>
+                            <circle cx="20" cy="45" r="22" fill="white"/>
+                            <circle cx="0" cy="50" r="20" fill="white"/>
+                            <circle cx="-25" cy="-35" r="20" fill="white" opacity="0.7"/>
+                            <circle cx="25" cy="-35" r="20" fill="white" opacity="0.7"/>
+                            <circle cx="-40" cy="0" r="22" fill="white" opacity="0.7"/>
+                            <circle cx="40" cy="0" r="22" fill="white" opacity="0.7"/>
+                            <circle cx="0" cy="20" r="24" fill="white" opacity="0.7"/>
+                        </g>
+                    </svg>
+                </div>
+                <div class="qr-box">
+                    VOTRE<br>QR CODE<br>ICI
+                </div>
+            </div>
+
+            <div class="brand-section">
+                <div class="brand-name">FionaAfroHairCare</div>
+                <div class="tagline">Spécialiste Cheveux Crépus 4C</div>
+            </div>
+
+            <div class="contact-info">
+                <div>📍 Douala, Cameroun</div>
+                <div>📱 WhatsApp: +237 692 455 585</div>
+                <div style="opacity: 0.85; font-size: 8px; margin-top: 4px;">Consultations Personnalisées • Produits Naturels</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

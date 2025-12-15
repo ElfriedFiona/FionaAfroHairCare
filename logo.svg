@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+  <defs>
+    <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#d4af37;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#b8941f;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Cercle extérieur doré -->
+  <circle cx="200" cy="200" r="180" fill="none" stroke="url(#goldGradient)" stroke-width="3"/>
+  
+  <!-- Photo au centre -->
+  <defs>
+    <clipPath id="photoCircle">
+      <circle cx="200" cy="200" r="175"/>
+    </clipPath>
+    <linearGradient id="darkOverlay" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#000000;stop-opacity:0" />
+      <stop offset="70%" style="stop-color:#000000;stop-opacity:0.3" />
+      <stop offset="100%" style="stop-color:#000000;stop-opacity:0.7" />
+    </linearGradient>
+  </defs>
+  
+  <image 
+    href="images/fiona-logo-photo.jpg"
+    x="25" 
+    y="25" 
+    width="350" 
+    height="350"
+    clip-path="url(#photoCircle)"
+    preserveAspectRatio="xMidYMid slice"
+  />
+  
+  <!-- Film noir pour améliorer la lisibilité du texte -->
+  <circle cx="200" cy="200" r="175" fill="url(#darkOverlay)" clip-path="url(#photoCircle)"/>
+  
+  <!-- Feuilles naturelles décoratives -->
+  <g transform="translate(200, 320)">
+    <ellipse cx="-40" cy="0" rx="8" ry="20" fill="#7a9b6f" opacity="0.5" transform="rotate(-20 -40 0)"/>
+    <ellipse cx="40" cy="0" rx="8" ry="20" fill="#7a9b6f" opacity="0.5" transform="rotate(20 40 0)"/>
+  </g>
+  
+  <!-- Texte FionaAfroHairCare -->
+  <text x="200" y="360" font-family="Georgia, serif" font-size="26" fill="#6b5639" text-anchor="middle" font-weight="300" letter-spacing="2">
+    FionaAfroHairCare
+  </text>
+  
+  <!-- Sous-titre -->
+  <text x="200" y="380" font-family="Georgia, serif" font-size="12" fill="#8b6f47" text-anchor="middle" font-style="italic">
+    Beauté Naturelle • Cheveux Crépus
+  </text>
+</svg>

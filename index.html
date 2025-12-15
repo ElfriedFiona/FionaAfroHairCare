@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FionaAfroHairCare - Soins Naturels pour Cheveux Crépus</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            color: #3d3027;
+            background-color: #faf8f5;
+        }
+
+        header {
+            background: linear-gradient(135deg, #8b6f47 0%, #6b5639 100%);
+            color: #faf8f5;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            color: #faf8f5;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-size: 0.95rem;
+        }
+
+        .nav-links a:hover {
+            color: #d4af37;
+        }
+
+        .hero {
+            background: linear-gradient(rgba(139, 111, 71, 0.7), rgba(107, 86, 57, 0.7)),
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%238b6f47" width="1200" height="600"/></svg>');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 6rem 2rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            font-style: italic;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: #d4af37;
+            color: #3d3027;
+            padding: 1rem 2.5rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: all 0.3s;
+            border: 2px solid #d4af37;
+        }
+
+        .cta-button:hover {
+            background-color: transparent;
+            color: #d4af37;
+        }
+
+        section {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            color: #6b5639;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+
+        .services-grid, .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: transform 0.3s;
+            border-top: 3px solid #8b6f47;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+        }
+
+        .card h3 {
+            color: #8b6f47;
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+        }
+
+        .price {
+            font-size: 1.5rem;
+            color: #d4af37;
+            font-weight: bold;
+            margin: 1rem 0;
+        }
+
+        .card ul {
+            list-style: none;
+            margin: 1rem 0;
+        }
+
+        .card ul li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .card ul li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #8b6f47;
+            font-weight: bold;
+        }
+
+        .about-section {
+            background-color: white;
+            padding: 3rem 2rem;
+            border-radius: 10px;
+            max-width: 800px;
+            margin: 4rem auto;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .about-section p {
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+            text-align: justify;
+        }
+
+        .contact-section {
+            background: linear-gradient(135deg, #8b6f47 0%, #6b5639 100%);
+            color: white;
+            padding: 3rem 2rem;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .contact-section h2 {
+            color: white;
+        }
+
+        .contact-methods {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            background: rgba(255,255,255,0.1);
+            padding: 1.5rem;
+            border-radius: 10px;
+            min-width: 200px;
+        }
+
+        .contact-item h3 {
+            color: #d4af37;
+            margin-bottom: 0.5rem;
+        }
+
+        .whatsapp-button {
+            display: inline-block;
+            background-color: #25D366;
+            color: white;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            margin-top: 1rem;
+            transition: all 0.3s;
+        }
+
+        .whatsapp-button:hover {
+            background-color: #20ba5a;
+            transform: scale(1.05);
+        }
+
+        footer {
+            background-color: #3d3027;
+            color: #faf8f5;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+        }
+
+        .testimonial {
+            background: #f5f1ea;
+            padding: 2rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+            border-left: 4px solid #d4af37;
+            font-style: italic;
+        }
+        /* Style du Bouton Retour en Haut */
+#backToTopBtn {
+    display: none; /* Cache le bouton par défaut */
+    position: fixed; /* Fixe la position sur l'écran */
+    bottom: 20px; /* 20px du bas */
+    right: 20px; /* 20px de la droite */
+    z-index: 99; /* Toujours au-dessus de tout */
+    border: none; 
+    outline: none; 
+    background-color: #d4af37; /* Couleur or */
+    color: white; 
+    cursor: pointer; 
+    padding: 15px; 
+    border-radius: 50%; /* Rond */
+    font-size: 18px;
+    line-height: 0; /* Centre le symbole ⬆️ */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: background-color 0.3s;
+}
+
+#backToTopBtn:hover {
+    background-color: #8b6f47; /* Changement de couleur au survol */
+}
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .nav-links {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+            
+            .services-grid, .products-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo" style="display: flex; align-items: center; gap: 0.5rem;">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="45" height="45">
+                    <defs>
+                        <clipPath id="photoCircleMini">
+                            <circle cx="200" cy="200" r="175"/>
+                        </clipPath>
+                    </defs>
+                    <circle cx="200" cy="200" r="180" fill="none" stroke="white" stroke-width="3"/>
+                    <image 
+                        href="images/fiona-logo-photo.jpg"
+                        x="25" y="25" width="350" height="350"
+                        clip-path="url(#photoCircleMini)"
+                        preserveAspectRatio="xMidYMid slice"
+                    />
+                </svg>
+                <span>FionaAfroHairCare</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#accueil">Accueil</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#produits">Produits</a></li>
+                <li><a href="#apropos">À Propos</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="accueil" class="hero">
+        <h1>Révélez la Beauté Naturelle de Vos Cheveux Crépus</h1>
+        <p>Consultations personnalisées et produits artisanaux pour cheveux afro 4C - Douala</p>
+        <a href="#contact" class="cta-button">Réserver Ma Consultation</a>
+    </section>
+
+    <!-- Timeline de transformation sur 3 ans -->
+    <section style="max-width: 1200px; margin: 3rem auto; padding: 0 2rem;">
+        <h2 style="text-align: center; color: #6b5639; margin-bottom: 0.5rem;">🌱 Ma Transformation en 3 Ans</h2>
+        <p style="text-align: center; color: #d4af37; font-size: 1.3rem; font-weight: bold; margin-bottom: 1rem;">
+            La PREUVE que Mes Méthodes Fonctionnent
+        </p>
+        <p style="text-align: center; color: #8b6f47; margin-bottom: 3rem; font-style: italic; max-width: 700px; margin-left: auto; margin-right: auto;">
+            Voici MES cheveux - de rasés à longs, en santé et magnifiques. Tout ce que vous voyez ici, je peux vous l'enseigner.
+        </p>
+
+        <!-- Timeline avec flèche de progression -->
+        <div style="position: relative; margin-bottom: 2rem;">
+    <div style="position: absolute; top: 50%; left: 0; right: 0; height: 4px; background: linear-gradient(to right, #8b6f47, #d4af37); transform: translateY(-50%); z-index: 0;"></div>
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; position: relative; z-index: 1;">
+        
+        <div style="text-align: center;">
+            <div style="background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 8px 25px rgba(0,0,0,0.15); border: 4px solid #8b6f47;">
+                <div style="background: #8b6f47; color: white; padding: 0.8rem; font-weight: bold; font-size: 1.1rem;">
+                    📍 DÉBUT - Année 1
+                </div>
+                <img src="images/image2-rasee.png" 
+     alt="Cheveux rasés - point de départ" 
+     style="width: 100%; height: 280px; object-fit: cover; object-position: 50% 20%; display: block;">
+                <div style="padding: 1rem; background: #faf8f5;">
+                    <p style="font-weight: bold; color: #6b5639; margin-bottom: 0.3rem;">Cheveux Rasés</p>
+                    <p style="font-size: 0.85rem; color: #666;">Le point de départ - j'ai tout recommencé</p>
+                </div>
+            </div>
+        </div>
+
+        <div style="text-align: center;">
+            <div style="background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 8px 25px rgba(0,0,0,0.15); border: 4px solid #b8941f;">
+                <div style="background: linear-gradient(135deg, #8b6f47, #b8941f); color: white; padding: 0.8rem; font-weight: bold; font-size: 1.1rem;">
+                    📈 PROGRESSION - Année 2
+                </div>
+                <img src="images/image5-medium.jpg" 
+     alt="Cheveux medium length" 
+     style="width: 100%; height: 280px; object-fit: cover; object-position: 50% 20%; display: block;">
+                <div style="padding: 1rem; background: #faf8f5;">
+                    <p style="font-weight: bold; color: #6b5639; margin-bottom: 0.3rem;">Longueur Moyenne</p>
+                    <p style="font-size: 0.85rem; color: #666;">Croissance visible, hydratation maîtrisée</p>
+                </div>
+            </div>
+        </div>
+
+        <div style="text-align: center;">
+            <div style="background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(212,175,55,0.4); border: 4px solid #d4af37; position: relative;">
+                <div style="position: absolute; top: 10px; right: 10px; background: #d4af37; color: white; padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.8rem; font-weight: bold; z-index: 2;">
+                    ⭐ AUJOURD'HUI
+                </div>
+                <div style="background: linear-gradient(135deg, #b8941f, #d4af37); color: white; padding: 0.8rem; font-weight: bold; font-size: 1.1rem;">
+                    🎯 RÉSULTAT - Année 3
+                </div>
+                <img src="images/image1-long.jpg" alt="Cheveux longs et volumineux" style="width: 100%; height: 280px; object-fit: cover; display: block;">
+                <div style="padding: 1rem; background: #faf8f5;">
+                    <p style="font-weight: bold; color: #d4af37; margin-bottom: 0.3rem;">Cheveux Longs & En Santé</p>
+                    <p style="font-size: 0.85rem; color: #666;">Volume, brillance, zéro casse ✨</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+        <!-- Galerie supplémentaire des différents styles -->
+        <div style="margin-top: 3rem;">
+            <h3 style="text-align: center; color: #8b6f47; margin-bottom: 1.5rem; font-size: 1.3rem;">
+                💫 Polyvalence & Styles Multiples
+            </h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.2rem;">
+                <div style="border-radius: 12px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                    <img src="images/image7-afro.jpg" alt="Afro volumineux défini" style="width: 100%; height: 250px; object-fit: cover; display: block;">
+                    <div style="padding: 0.8rem; background: white; text-align: center; font-size: 0.85rem; color: #6b5639;">
+                        <strong>Afro Défini</strong>
+                    </div>
+                </div>
+                <div style="border-radius: 12px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                    <img src="images/image3-twists.png" alt="Twists protecteurs" style="width: 100%; height: 250px; object-fit: cover; display: block;">
+                    <div style="padding: 0.8rem; background: white; text-align: center; font-size: 0.85rem; color: #6b5639;">
+                        <strong>Twists Élégants</strong>
+                    </div>
+                </div>
+                <div style="border-radius: 12px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                    <img src="images/image6-loose.jpg" alt="Cheveux détachés naturels" style="width: 100%; height: 250px; object-fit: cover; display: block;">
+                    <div style="padding: 0.8rem; background: white; text-align: center; font-size: 0.85rem; color: #6b5639;">
+                        <strong>Détachés Naturels</strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Message inspirant -->
+        <div style="background: linear-gradient(135deg, #8b6f47, #6b5639); color: white; padding: 2.5rem; border-radius: 15px; margin-top: 3rem; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.2);">
+            <h3 style="font-size: 1.5rem; margin-bottom: 1rem; color: #d4af37;">✨ Si Mes Cheveux Ont Pu, Les Vôtres Aussi ! ✨</h3>
+            <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 0;">
+                En 3 ans seulement, avec les BONNES méthodes, les BONS produits et les BONNES techniques, 
+                mes cheveux sont passés de rien à cette magnifique couronne naturelle. 
+                <br><br>
+                <strong style="color: #d4af37; font-size: 1.2rem;">Je vais vous enseigner EXACTEMENT comment j'ai fait.</strong>
+            </p>
+        </div>
+    </section>
+
+    <section id="services">
+        <h2>Mes Services de Consultation</h2>
+        <p style="text-align: center; max-width: 800px; margin: 0 auto 3rem; color: #6b5639; line-height: 1.8;">
+            Je ne vous propose pas de tout jeter et tout remplacer. Je vous apprends à faire les BONS choix parmi les produits du commerce (shampoings et après-shampoings de qualité disponibles au Cameroun), mais surtout à maîtriser TOUTE la routine capillaire que personne ne vous explique jamais.
+        </p>
+
+        <div class="services-grid">
+            <div class="card">
+                <h3>Pack Découverte</h3>
+                <div class="price">5 000 - 7 000 FCFA</div>
+                <ul>
+                    <li>Diagnostic capillaire complet</li>
+                    <li>Analyse de votre type de cheveux 4C</li>
+                    <li>Routine complète personnalisée (prepoo, lavage, hydratation)</li>
+                    <li>Recommandations produits commerciaux adaptés</li>
+                    <li>Techniques de base anti-casse</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Pack Transformation</h3>
+                <div class="price">12 000 - 15 000 FCFA</div>
+                <ul>
+                    <li>Tout du Pack Découverte</li>
+                    <li>Formation pratique : prepoo, démêlage sans casse</li>
+                    <li>Méthodes LOC/LCO pour garder l'hydratation</li>
+                    <li>Techniques quotidiennes anti-shrinkage</li>
+                    <li>Suivi 1 mois + support WhatsApp</li>
+                    <li>Guide coiffures protectrices</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Pack VIP</h3>
+                <div class="price">20 000 - 25 000 FCFA</div>
+                <ul>
+                    <li>Tout du Pack Transformation</li>
+                    <li>2 produits artisanaux offerts (huiles ou masques)</li>
+                    <li>Masterclass complète : de A à Z</li>
+                    <li>Suivi personnalisé 3 mois</li>
+                    <li>Protocole stimulation pousse</li>
+                    <li>Accompagnement transformation totale</li>
+                </ul>
+            </div>
+        </div>
+
+        <div style="background: #f5f1ea; padding: 2rem; border-radius: 10px; margin-top: 3rem; border-left: 4px solid #8b6f47;">
+            <h3 style="color: #8b6f47; margin-bottom: 1rem;">Ce que vous allez vraiment apprendre :</h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-top: 1rem;">
+                <div>
+                    <strong style="color: #6b5639;">✓ Avant le shampoing</strong>
+                    <p style="margin: 0.5rem 0 0 0; font-size: 0.95rem;">Le prepoo : préparer vos cheveux au lavage pour éviter le choc hydrique et la casse</p>
+                </div>
+                <div>
+                    <strong style="color: #6b5639;">✓ Pendant le lavage</strong>
+                    <p style="margin: 0.5rem 0 0 0; font-size: 0.95rem;">Les gestes pour ne pas emmêler, gagner du temps et préserver vos longueurs</p>
+                </div>
+                <div>
+                    <strong style="color: #6b5639;">✓ Après le shampoing</strong>
+                    <p style="margin: 0.5rem 0 0 0; font-size: 0.95rem;">Démêlage de qualité sans casse + application des masques protéinés et ultra-hydratants</p>
+                </div>
+                <div>
+                    <strong style="color: #6b5639;">✓ Sceller l'hydratation</strong>
+                    <p style="margin: 0.5rem 0 0 0; font-size: 0.95rem;">Méthodes LOC et LCO pour que vos cheveux restent hydratés plusieurs jours</p>
+                </div>
+                <div>
+                    <strong style="color: #6b5639;">✓ Au quotidien</strong>
+                    <p style="margin: 0.5rem 0 0 0; font-size: 0.95rem;">Porter vos cheveux afro tous les jours sans sécheresse, casse ou shrinkage excessif</p>
+                </div>
+                <div>
+                    <strong style="color: #6b5639;">✓ Stimuler la pousse</strong>
+                    <p style="margin: 0.5rem 0 0 0; font-size: 0.95rem;">Techniques et huiles artisanales pour une croissance saine et forte</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="produits">
+        <h2>Mes Produits Artisanaux</h2>
+        <p style="text-align: center; max-width: 700px; margin: 0 auto 2rem; color: #6b5639;">
+            Je confectionne des produits sur mesure avec des ingrédients naturels pour compléter votre routine capillaire.
+        </p>
+        <div class="products-grid">
+            <div class="card">
+                <h3>Masques Protéinés & Ultra-Hydratants</h3>
+                <div class="price">5 000 - 8 000 FCFA</div>
+                <p>Masques sur mesure pour nourrir en profondeur, renforcer vos cheveux et éviter la casse. Formules adaptées à VOS besoins spécifiques.</p>
+            </div>
+
+            <div class="card">
+                <h3>Huiles Capillaires Artisanales</h3>
+                <div class="price">5 000 - 8 000 FCFA</div>
+                <p>Pour sceller l'hydratation (méthode LOC/LCO), stimuler la pousse, éviter la casse. Formules puissantes 100% naturelles.</p>
+            </div>
+
+            <div class="card">
+                <h3>Coffret Routine Complète</h3>
+                <div class="price">15 000 - 18 000 FCFA</div>
+                <p>L'essentiel : masque protéiné + masque hydratant + huile scellante + crème coiffante. Tout pour une routine optimale.</p>
+            </div>
+
+            <div class="card">
+                <h3>Format Découverte</h3>
+                <div class="price">2 000 - 3 000 FCFA</div>
+                <p>Mini format pour tester un produit spécifique sans engagement. Idéal pour découvrir ce qui convient à vos cheveux.</p>
+            </div>
+        </div>
+
+        <div style="background: #fff; padding: 2rem; border-radius: 10px; margin-top: 2rem; box-shadow: 0 5px 20px rgba(0,0,0,0.08);">
+            <h3 style="color: #8b6f47; margin-bottom: 1rem; text-align: center;">💡 Mon approche unique</h3>
+            <p style="text-align: center; color: #6b5639;">
+                Je ne remplace PAS vos shampoings et après-shampoings du commerce. Je vous apprends à choisir les BONS parmi ceux disponibles au Cameroun, 
+                et je confectionne les produits complémentaires essentiels (masques, huiles) que vous ne trouverez pas facilement en qualité équivalente.
+            </p>
+        </div>
+
+        <div class="testimonial">
+            "Depuis que j'utilise les produits de Fiona et que j'ai appris le prepoo et les bonnes techniques de démêlage, mes cheveux ont retrouvé leur brillance naturelle. Plus de casse, plus de sécheresse. Je recommande à 100% !" - Cliente satisfaite, Douala
+        </div>
+    </section>
+
+    <section id="apropos">
+        <div class="about-section">
+            <h2>Mon Histoire</h2>
+            
+            <!-- Photo de Fiona -->
+            <div style="text-align: center; margin-bottom: 2rem;">
+                <img src="images/fiona-portrait.jpg" alt="Fiona - Spécialiste cheveux crépus" style="width: 200px; height: 200px; border-radius: 50%; object-fit: cover; border: 5px solid #d4af37; box-shadow: 0 8px 25px rgba(0,0,0,0.15);">
+                <p style="margin-top: 1rem; font-style: italic; color: #8b6f47; font-size: 1.1rem;">Fiona - Votre Coach Capillaire</p>
+            </div>
+
+            <p>
+                Pendant des années, j'ai lutté pour comprendre et accepter mes cheveux crépus 4C. Comme beaucoup, j'ai essayé tous les produits du commerce sans vraiment obtenir les résultats que je cherchais. Mais le problème n'était pas les produits eux-mêmes...
+            </p>
+            <p>
+                C'était tout ce que PERSONNE ne m'avait jamais expliqué : le prepoo, les bonnes techniques de lavage et démêlage, comment sceller l'hydratation avec les méthodes LOC et LCO, comment porter mes cheveux au quotidien sans les assécher ou les casser.
+            </p>
+            <p>
+                C'est en revenant aux bases, en apprenant ces techniques essentielles et en confectionnant mes propres masques et huiles que tout a changé. J'ai compris qu'on peut utiliser de bons shampoings du commerce, mais que la VRAIE différence se fait dans la routine complète et les gestes quotidiens.
+            </p>
+            <p>
+                Les transformations ont été spectaculaires - non seulement dans l'apparence de mes cheveux (longueur, brillance, définition), mais aussi dans ma confiance en moi et ma relation avec mes cheveux. Partout où j'allais, les gens me demandaient mes secrets.
+            </p>
+            <p>
+                Aujourd'hui, je partage cette expertise COMPLÈTE avec vous. Je ne vous vends pas juste des produits ou juste des conseils. Je vous transmets toute une méthodologie : de la préparation au lavage jusqu'aux techniques quotidiennes pour garder vos cheveux hydratés, définis et en bonne santé. Parce que chaque personne aux cheveux crépus mérite de maîtriser sa couronne, sans se ruiner.
+            </p>
+            <p style="text-align: center; margin-top: 2rem; color: #8b6f47; font-style: italic;">
+                "Vos cheveux crépus sont une couronne naturelle. Laissez-moi vous aider à la faire briller." - Fiona
+            </p>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <h2>Prête à Transformer Vos Cheveux ?</h2>
+        <p>Contactez-moi pour réserver votre consultation ou commander vos produits</p>
+        
+        <div class="contact-methods">
+            <div class="contact-item">
+                <h3>📍 Localisation</h3>
+                <p>Douala<br>Cameroun</p>
+            </div>
+            <div class="contact-item">
+                <h3>💬 WhatsApp</h3>
+                <p>+237 692 455 585</p>
+                <a href="https://wa.me/237692455585" class="whatsapp-button">Discuter sur WhatsApp</a>
+            </div>
+        </div>
+
+        <p style="margin-top: 2rem; font-size: 0.9rem;">
+            Réponse sous 24h • Consultations sur rendez-vous • Livraison disponible à Douala 
+        </p>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 FionaAfroHairCare - Tous droits réservés</p>
+        <p style="margin-top: 0.5rem; font-size: 0.9rem;">Soins naturels pour cheveux crépus • Made with 💚 in Cameroon</p>
+    </footer>
+    <button onclick="topFunction()" id="backToTopBtn" title="Retour en haut">⬆️</button>
+    <script>
+    // Récupère le bouton
+    let mybutton = document.getElementById("backToTopBtn");
+
+    // Quand l'utilisateur fait défiler de 20px, affiche le bouton
+    window.onscroll = function() {scrollFunction()};
+
+    function scrollFunction() {
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        mybutton.style.display = "block";
+      } else {
+        mybutton.style.display = "none";
+      }
+    }
+
+    // Quand l'utilisateur clique, revient en haut de la page
+    function topFunction() {
+      // Pour les navigateurs modernes
+      window.scrollTo({ top: 0, behavior: 'smooth' }); 
+      // Pour les anciens navigateurs (fallback)
+      document.body.scrollTop = 0; 
+      document.documentElement.scrollTop = 0;
+    }
+</script>
+</body>
+</html>
